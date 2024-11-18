@@ -5,6 +5,8 @@ import SearchPage from '../pages/SearchPage';
 import ProductDetails from '../pages/ProductDetails';
 import CartPage from '../pages/CartPage';
 import LogonPage from '../pages/LogonPage';
+import { faker } from '@faker-js/faker';
+import RegisterPage from '../pages/RegisterPage';
 
 test.describe('Zara test', () => {
     test('End to end test', async ({ page }) => {
@@ -43,6 +45,16 @@ test.describe('Zara test', () => {
         let logonPage = new LogonPage(page);
         await logonPage.navigateToRegisterPage();
         expect(page.url()).toContain('signup');
+
+        let registrationPage = new RegisterPage(page);
+        let userData = {
+            email: faker.internet.email(),
+            password: 'Qwerty1!',
+            name: faker.person.firstName(),
+            lastName: faker.person.lastName(),
+            phone: '5062345678'
+        };
+        await registrationPage.fillOutAndSubmitRegistration(userData);
     });
 })
 
