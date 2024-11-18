@@ -22,7 +22,6 @@ export default class CartPage {
             i--;
         }
         expect(await this.cartItems.count()).toBe(expectedRemainingCount);
-
     }
     async navigateToCheckout(): Promise<void> {
         await this.proceedToCheckout.click()

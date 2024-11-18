@@ -9,7 +9,7 @@ export default class SearchPage {
         this.searchInput = this.page.locator('input.search-home-input ');
         this.firstFoundProduct = this.page.locator('ul.product-grid__product-list > li:first-child .product-grid-product__link')
     }
-    async searchAndSubmit(query: string){
+    async searchAndSubmit(query: string): Promise<void> {
         await this.searchInput.fill(query);
         await this.searchInput.press('Enter'); 
     }

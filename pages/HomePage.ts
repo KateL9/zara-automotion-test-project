@@ -9,7 +9,7 @@ export default class HomePage {
         this.searchField = this.page.locator('a[data-qa-id="header-search-bar-link"]');
         this.cartButton = this.page.locator('a[data-qa-id="layout-header-go-to-cart"]');
     }
-    async clickSearchField(){
+    async clickSearchField(): Promise<void> {
         await this.searchField.click();
     }
     async goToCart(): Promise<void> {

@@ -10,7 +10,6 @@ export default class RegisterPage {
     private privacyPolicy: Locator;
     private signUpButton: Locator;
     private alertDialog: Locator;
-   
     constructor(page: Page) {
         this.page = page;
         this.emailField = this.page.locator('input[data-qa-input-qualifier="email"]');

@@ -19,8 +19,7 @@ export default class ProductDetails {
         this.sizeRecomenderPopup = this.page.locator('div.zds-dialog__focus-trap');
         this.closeSizeRecomenderButton = this.page.locator('button.zds-dialog-close-button');
     }
-    
-    async addAllAvailableSizesToCart():Promise<void> {
+    async addAllAvailableSizesToCart(): Promise<void> {
         let sizes = await this.availableSizes.elementHandles();
         for (let size of sizes) {
             await size.click();
@@ -34,11 +33,9 @@ export default class ProductDetails {
             await expect(this.addToCartNotificationPopup).not.toBeVisible();
         }
     }
-
-    async closeAddToCartPopup():Promise<void> {
+    async closeAddToCartPopup(): Promise<void> {
         await this.closeAddToCartNotification.click();
     }
-
     async closeSizeRecomenderPopup(): Promise<void> {
         await this.closeSizeRecomenderButton.click();
     }
