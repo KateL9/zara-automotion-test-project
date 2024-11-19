@@ -21,6 +21,8 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        screenshot: 'only-on-failure',
+        outputDir: 'test-results/screenshots',
         headless: true,
         timeout: 50000,
       },
@@ -29,6 +31,8 @@ export default defineConfig({
       name: 'firefox',
       use: { 
         ...devices['Desktop Firefox'],
+        screenshot: 'only-on-failure',
+        outputDir: 'test-results/screenshots',
         headless: true,
         timeout: 30000,
       },
@@ -37,6 +41,8 @@ export default defineConfig({
       name: 'webkit',
       use: { 
         ...devices['Desktop Safari'],
+        screenshot: 'only-on-failure',
+        outputDir: 'test-result/screenshots',
         headless: true,
         timeout: 30000,
       },

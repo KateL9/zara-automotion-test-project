@@ -29,5 +29,15 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install
 
+      - name: Create directory for screenshots
+        run: mkdir -p test-results/screenshots
+
       - name: Run Playwright tests
         run: npm run test:${{ matrix.browser }}
+
+      - name: Upload Screenshots on Failure
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-screenshots
+          path: test-results/screenshots/
