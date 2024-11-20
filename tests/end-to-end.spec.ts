@@ -16,7 +16,7 @@ test.describe('Zara test', () => {
         await expect(cookiePage.cookiesPopup).toBeHidden();
         
         let homePage = new HomePage(page);
-        await homePage.navigateToSearch();
+        await homePage.clickSearchBar();
 
         let searchPage = new SearchPage(page);
         let searchQuery = 'FLARED MID WAIST SLIM CROP JEANS';

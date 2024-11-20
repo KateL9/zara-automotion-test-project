@@ -9,8 +9,10 @@ export default class HomePage {
         this.searchField = this.page.locator('a[data-qa-id="header-search-bar-link"]');
         this.cartButton = this.page.locator('a[data-qa-id="layout-header-go-to-cart"]');
     }
-    async navigateToSearch(): Promise<void> { 
-        await this.page.goto('https://www.zara.com/ca/en/search/home');
+    async clickSearchBar(): Promise<void> { 
+        await this.searchField.waitFor({ state: 'visible', timeout: 30000 });
+        await this.searchField.click();
+        await expect(this.page).toHaveURL('https://www.zara.com/ca/en/search/home');
     }
     async goToCart(): Promise<void> {
         await this.cartButton.click();
