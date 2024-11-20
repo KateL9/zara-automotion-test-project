@@ -10,6 +10,7 @@ export default class HomePage {
         this.cartButton = this.page.locator('a[data-qa-id="layout-header-go-to-cart"]');
     }
     async clickSearchBar(): Promise<void> { 
+        await this.searchField.waitFor({ state: 'visible', timeout: 10000 });
         await this.searchField.click();
     }
     async goToCart(): Promise<void> {
