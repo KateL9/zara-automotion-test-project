@@ -13,12 +13,12 @@ export default class CookiesPage {
         await this.page.goto(url);
     }
     async closeCookiesPopup(): Promise<void> {
-        await this.page.evaluate(() => {
-            const button = document.querySelector('button.banner-close-button');
-            if (button) {
-                button.click();
-            }
-        });
-        //await this.closeButton.click();
+        // await this.page.evaluate(() => {
+        //     const button = document.querySelector('button.banner-close-button');
+        //     if (button) {
+        //         button.click();
+        //     }
+        // });
+        await this.closeButton.click();
     }
 }

@@ -28,6 +28,8 @@ export default class ProductDetails {
                 await this.closeSizeRecomenderPopup();
                 await this.addToCartButton.click();
             }
+
+            await this.addToCartNotificationPopup.waitFor({ state: 'visible', timeout: 10000 });
             await expect(this.addToCartNotificationPopup).toBeVisible();
             await this.closeAddToCartPopup();
             await expect(this.addToCartNotificationPopup).not.toBeVisible();

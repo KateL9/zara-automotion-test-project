@@ -16,7 +16,6 @@ test.describe('Zara test', () => {
         await expect(cookiePage.cookiesPopup).toBeHidden();
         
         let homePage = new HomePage(page);
-        await page.waitForLoadState("domcontentloaded");
         await homePage.clickSearchBar();
 
         let searchPage = new SearchPage(page);
